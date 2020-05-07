@@ -1,0 +1,53 @@
+﻿<div class="card">
+    <h4 class="card-header">Currency Converter</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="currenc1">Currency I have:</label>
+                <input type="text" formControlName="currenc1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.currenc1.errors }" />
+                <div *ngIf="submitted && f.currenc1.errors" class="invalid-feedback">
+                    <div *ngIf="f.currenc1.errors.required">Currency is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="currenc2">Currency I want:</label>
+                <input type="text" formControlName="currenc2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.currenc2.errors }" />
+                <div *ngIf="submitted && f.currenc2.errors" class="invalid-feedback">
+                    <div *ngIf="f.currenc2.errors.required">Currency is required</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="amt">AMOUNT:</label>
+                <input type="number" formControlName="amt" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.amt.errors }" />
+                <div *ngIf="submitted && f.amt.errors" class="invalid-feedback">
+                    <div *ngIf="f.amt.errors.required">Amount is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="converted">CONVERTED AMOUNT:</label>
+                <p>
+                    Value: {{ posts }}
+                  </p>
+            </div>
+        
+        
+            <div class="form-group">
+                <button  class="btn btn-primary">
+                    
+                    Submit
+                </button>
+               
+            </div>
+        </form>
+    </div>
+    <ul class="list-group">
+        <li
+        
+           class="list-group-item">
+           
+           
+        </li>
+      </ul>
+      
+</div>
